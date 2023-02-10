@@ -12,22 +12,5 @@ pipeline {
                 sh 'mvn clean package -DskipTests'
             }
         }
-        stage('Build Image') {
-            steps {
-                script {
-                	app = docker.build("ebanarp/selenium-docker-test")
-                }
-            }
-        }
-        stage('Push Image') {
-            steps {
-                script {
-			        docker.withRegistry('https://registry.hub.docker.com', 'dockerhubid') {
-			        	app.push("${BUILD_NUMBER}")
-			            app.push("latest")
-			        }
-                }
-            }
-        }
     }
 }

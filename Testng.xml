@@ -1,0 +1,7 @@
+<suite name="bank-account.xml">
+    <test name="bank-account-test">
+        <classes>
+            <class name="com.parabank.tests.parabankRegistration" />
+        </classes>
+    </test>
+</suite>
